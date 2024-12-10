@@ -59,7 +59,7 @@ The **Optimized Apriori Algorithm** builds on the classical Apriori by introduci
 
 ---
 
-###dataset source:###
+### **Dataset source:** ###
 Link: http://fimi.uantwerpen.be/data/
 
 ---
