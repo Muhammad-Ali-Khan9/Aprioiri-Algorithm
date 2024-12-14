@@ -154,7 +154,7 @@ A **Trie** (or prefix tree) can be used to store and generate frequent itemsets 
   - **Usage**: Tries help in pruning and efficiently storing itemsets by sharing common prefixes.
   
   Example Trie for storing itemsets:
-  ```plaintext
+```plaintext
       root
      /    \
     c      b
@@ -162,6 +162,7 @@ A **Trie** (or prefix tree) can be used to store and generate frequent itemsets 
   a   r      a
  / \          \
 t   r          t
+
 ```
 
 - Each level of the tree corresponds to an itemset size (e.g., level 1 for single items, level 2 for pairs, etc.).
