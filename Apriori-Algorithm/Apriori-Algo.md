@@ -64,6 +64,47 @@ Lift(A => B) = Confidence(A => B) / Support(B)
 - Frequent itemsets and association rules are the final outputs, providing insights into the data.
 
 ---
+### Pseudo Code for Apriori Algorithm ###
+`Algorithm Apriori(T, minSupport, minConfidence):
+    // T: Transactions, minSupport: Minimum support, minConfidence: Minimum confidence
+
+    // Step 1: Initialize
+    C1 = Generate all single-item candidates
+    F1 = Filter candidates in C1 based on minSupport
+
+    // Step 2: Iterative Process
+    k = 1
+    while Fk is not empty:
+        k = k + 1
+        // Generate candidate itemsets of size k from Fk-1
+        Ck = GenerateCandidates(Fk-1)
+        
+        // Prune candidates with infrequent subsets
+        Ck = PruneCandidates(Ck, minSupport)
+
+        // Count support for remaining candidates
+        for each transaction t in T:
+            for each candidate c in Ck:
+                if c is in t:
+                    increment count of c
+
+        // Generate frequent itemsets of size k
+        Fk = {c in Ck | Support(c) >= minSupport}
+
+    // Step 3: Generate Association Rules
+    Rules = []
+    for each frequent itemset F in all Fk:
+        for each subset S of F:
+            if S is not empty and S != F:
+                Confidence = Support(F) / Support(S)
+                if Confidence >= minConfidence:
+                    Rule = "If S then (F \\ S)"
+                    Lift = Confidence / Support(F \\ S)
+                    if Lift > 1:
+                        Add Rule to Rules
+
+    return Rules`
+---
 
 ## Complexity Analysis
 
