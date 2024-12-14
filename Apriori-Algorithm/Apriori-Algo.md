@@ -65,7 +65,7 @@ Lift(A => B) = Confidence(A => B) / Support(B)
 
 ---
 ### Pseudo Code for Apriori Algorithm ###
-`Algorithm Apriori(T, minSupport, minConfidence):
+Algorithm Apriori(T, minSupport, minConfidence):
     // T: Transactions, minSupport: Minimum support, minConfidence: Minimum confidence
 
     // Step 1: Initialize
@@ -103,7 +103,7 @@ Lift(A => B) = Confidence(A => B) / Support(B)
                     if Lift > 1:
                         Add Rule to Rules
 
-    return Rules`
+    return Rules
 ---
 
 ## Complexity Analysis
