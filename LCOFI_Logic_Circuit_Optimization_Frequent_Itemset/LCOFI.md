@@ -194,7 +194,6 @@ In practice, the graph-based representation significantly reduces unnecessary co
 | **Candidate Itemsets**            | `O(C)`                           | Stores candidate itemsets during mining.                        |
 | **Support Calculation Matrix**    | `O(N * I)`                       | Matrix for calculating support of itemsets.                      |
 
-### Conclusion on Space Complexity:
 The **space complexity** of the **LOCFI using Bipartite Graph** algorithm is influenced by several factors, including the number of transactions (`N`), the number of items (`I`), the number of frequent itemsets (`F`), and the number of candidate itemsets (`C`). In general, the space complexity can grow significantly with large datasets, particularly due to the **exponential growth of itemsets**. However, optimizations such as **graph representations**, **adjacency lists**, and **pruning** help manage the space requirements more efficiently than traditional algorithms like **Apriori**.
 
 In the worst case, the space complexity can be `O(N * I)` due to the adjacency matrix or support calculation matrix. However, by leveraging **sparse representations** (like adjacency lists), the space complexity can be reduced significantly in practice.
