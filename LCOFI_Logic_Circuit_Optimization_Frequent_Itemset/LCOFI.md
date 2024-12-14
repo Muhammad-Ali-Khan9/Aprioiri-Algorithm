@@ -181,7 +181,7 @@ In practice, the graph-based representation significantly reduces unnecessary co
 
 ---
 
-### Summary of Space Complexity
+### Space Complexity
 
 | **Component**                     | **Space Complexity**             | **Explanation**                                                  |
 |-----------------------------------|----------------------------------|------------------------------------------------------------------|
