@@ -45,17 +45,20 @@ The **LCOFI Algorithm** is a graph-based FIM method that uses a bipartite graph 
 
 ---
 
-### **3. Optimized Apriori**
-The **Optimized Apriori Algorithm** builds on the classical Apriori by introducing:
-- **Candidate Reduction**: Reduces the number of itemsets generated in each iteration.
-- **Data Layout Optimization**: Utilizes vertical data formats or bitmap representations to enhance support counting.
+### **3. Parallel Apriori Using CUDA**
+
+Our **Parallel Apriori Algorithm** leverages CUDA to accelerate the classical Apriori process by offloading computationally expensive support counting to the GPU. It also incorporates:
+
+- **Candidate Reduction**: Decreases the number of itemsets generated in each iteration.  
+- **Data Layout Optimization**: Can utilize vertical data formats or bitmap representations on the GPU to improve memory access and speed up counting.
 
 #### **Features**:
-- Fewer database scans compared to classical Apriori.
-- Improved performance for larger datasets with high dimensionality.
+- Substantially fewer database scans compared to a purely CPU-based approach.  
+- Improved performance for larger datasets with high dimensionality due to GPU-based parallelism.  
 
 #### **Use Case**:
-- Web Usage Mining: Analyze frequent paths or clicks on websites to optimize user experience.
+- Web Usage Mining: Quickly analyze frequent user paths or click patterns on websites, using GPU parallelism to handle large-scale data and optimize user experience.
+
 
 ---
 
