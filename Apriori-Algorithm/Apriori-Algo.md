@@ -65,6 +65,36 @@ Lift(A => B) = Confidence(A => B) / Support(B)
 
 ---
 
+## **Mathematics in Apriori**
+
+Apriori relies on a few basic concepts to measure the frequency and usefulness of itemsets. Below are the primary metrics and how they are computed:
+
+1. **Support**  
+   - Definition: The proportion of transactions in which an itemset appears.  
+   - Formula in plain text:  
+     Support of itemset X = count of X divided by total number of transactions  
+   - Here, count of X is how many transactions in the dataset contain all items of X.
+
+2. **Minimum Support Threshold (minSupport)**  
+   - Apriori only considers an itemset frequent if its Support is at least the user-defined minSupport.  
+   - If Support(X) < minSupport, itemset X is pruned from further consideration.
+
+3. **Confidence**  
+   - Definition: For a rule A implies B, Confidence measures how often B appears in transactions that contain A.  
+   - Formula in plain text:  
+     Confidence A implies B = Support of A union B divided by Support of A  
+   - This tells us, given that A is in a transaction, how likely it is that B is also in that transaction.
+
+4. **Lift** (optional in many Apriori implementations)  
+   - Definition: Measures how much more likely B is to occur with A than if A and B were statistically independent.  
+   - Formula in plain text:  
+     Lift A implies B = Confidence A implies B divided by Support of B  
+   - A lift value greater than 1.0 often indicates that A and B occur together more frequently than one would expect from random chance.
+
+Putting it together, Apriori uses these metrics to generate and evaluate itemsets and rules. Support is used to prune low-frequency itemsets, while Confidence (and sometimes Lift) is used to determine interesting association rules from the frequent itemsets.
+
+---
+
 ## Complexity Analysis
 
 ### Space Complexity
